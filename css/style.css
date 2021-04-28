@@ -19,6 +19,7 @@ padding: 0;
 html{
     font-size: 62.5%;
     font-family: 'DM Sans', sans-serif;
+    scroll-behavior: smooth;
 }
 
 header{
@@ -143,11 +144,15 @@ main{
 }
 
 .main-table-container .main-table-container--coin{
-    width: 100%;
-    margin-left: -19%;
     font-size: 1.8rem;
     font-weight: 700;
     color: #FF9536;
+}
+
+.main-table-container .main-table-container--coin1{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--sencondary-blue);
 }
 
 .main-exchange-container .main-table-container--tabla{
@@ -158,7 +163,7 @@ main{
     justify-content: space-evenly;
     width: 70%;
     min-width: 197px;
-    max-width: 600px;
+    max-width: 300px;
     height: 179px;
     margin: 0 auto;
     padding: 10px 12px;
@@ -166,7 +171,44 @@ main{
     border-radius: 7px;
 }
 
+.main-exchange-container .main-table-container--comisiones{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    width: 70%;
+    min-width: 197px;
+    max-width: 300px;
+    height: 179px;
+    margin: 0 auto;
+    padding: 10px 12px;
+    background-color: var(--just-white);
+    border-radius: 7px;
+}
+
+.main-table-container{
+    display: flex;
+    width: 95%;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+
+}
+
+.container-all-table{
+    position: relative;
+    scroll-snap-align: center;
+    margin: 0 21px 0;
+}
+
+
+
 .main-table-container--tabla .coin-tabla{
+    margin: 0;
+}
+
+.main-table-container--comisiones .coin-tabla{
     margin: 0;
 }
 
@@ -174,11 +216,17 @@ main{
     color: #B5B0AC;
 }
 
+
 .main-table-container .colum1{
     display: flex;
     justify-content: start;
     align-items: center;
     margin-left: 12px;
+}
+.main-table-container .colum2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .main-table-container .coin-icon2{
     width: 15px;
@@ -203,12 +251,32 @@ main{
     height: 31px;
     padding: 8px;
     margin: 0 auto;
+    margin-bottom: 27px;
     margin-top: 20px;
     background-color: var(--soft-orange);
     border-radius: 7px;
 }
 
 .button-updated p{
+    display: inline-block;
+    font-family: Inter;
+    font-size: 1.2rem;
+    color: var(--black);
+
+}
+
+.button-updated-comisiones{
+    width: 173px;
+    height: 31px;
+    padding: 8px;
+    margin: 0 auto;
+    margin-bottom: 27px;
+    margin-top: 20px;
+    background-color: var(--soft-blue);
+    border-radius: 7px;
+}
+
+.button-updated-comisiones p{
     display: inline-block;
     font-family: Inter;
     font-size: 1.2rem;
@@ -372,4 +440,163 @@ main{
     font-weight: bold;
     line-height: 2.6rem;
     color: var(--just-white);
+}
+
+
+.main-plans-container{
+    width: 100%;
+    min-width: 320px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+.plans-title{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.plans-title h2{
+    margin-top: 50px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);  
+}
+
+.plans-title p{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+.plans-container--slider{
+    display: flex;
+    /* gap: 50px; */
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+ }
+
+.plans-container--card{
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 190px;
+    max-width: 300px;
+    height: 250px;
+    margin: 50px 25px 0;
+    padding: 0 15px;
+    background-color: var(--just-white);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);
+}
+
+.recommended{
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    padding: 6px;
+    top: -15px;
+    left: calc(50% - 60px);
+    font-size: 1.2rem;
+    background-color: var(--bitcoin-orange);
+    border-radius: 8px;
+    color: var(--just-white);
+}
+
+.plan-card--title{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: black;
+}
+
+.plan-card--price{
+    padding: 5px 0;
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 5rem;
+    color: black;
+}
+
+.plan-card--price span{
+    position: absolute;
+    left: 72px;
+    top: 40px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.plan-card--saving{
+    font-size: 1.2rem;
+    color: #757575;
+}
+
+.plan-card--ca{
+    width: 150px;
+    height: 48px;
+    margin-top: 20px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    background-color:#E5E5E5;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    color: var(--black);
+}
+
+.plan-card--ca span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../assets/icons/arrow-right.svg');
+    vertical-align: text-bottom;
+}
+
+footer{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+}
+
+footer section{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .right img{
+    width: 75px;
+    height: 75px;
+}
+
+footer .left ul{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}
+
+.left li{
+    margin: 10px 0;
+}
+
+.left a {
+    text-decoration: none;
+    color: var(--just-white);
+}
+
+@media (min-width: 508px){
+    .main-table-container{
+        justify-content: center;
+    }
 }
